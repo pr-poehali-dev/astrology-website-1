@@ -87,11 +87,7 @@ const tariffs = [
   },
 ];
 
-const reviews = [
-  { name: 'Мария К.', text: 'Очень точный разбор! Елена описала мои качества так, как будто знала меня всю жизнь. Особенно помогло понять причины повторяющихся ситуаций в работе.', date: 'Ноябрь 2024' },
-  { name: 'Анна В.', text: 'Делала натальную карту перед важным решением о переезде. Разбор был очень конкретным — с рекомендациями и сроками. Теперь понимаю, что делаю правильно.', date: 'Октябрь 2024' },
-  { name: 'Ольга Д.', text: 'Много лет интересовалась астрологией, но всегда казалось слишком сложным. Елена объясняет понятно, без терминов. Перечитываю разбор снова и нахожу новые смыслы.', date: 'Сентябрь 2024' },
-];
+
 
 const advantages = [
   {
@@ -362,29 +358,33 @@ const Natal = () => {
       </section>
 
       {/* REVIEWS */}
-      <section className="py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <div className="divider-soft mx-auto mb-4" />
-            <h2 className="section-title mb-3">Отзывы</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            {reviews.map((r, i) => (
-              <div key={i} className="card-soft p-6">
-                <p className="text-purple-mid text-lg mb-3">✦✦✦✦✦</p>
-                <p className="text-sm font-golos text-astro-text leading-relaxed mb-4 italic">«{r.text}»</p>
-                <div className="flex items-center justify-between pt-3 border-t border-purple-light/50">
-                  <p className="font-golos font-medium text-sm text-astro-text">{r.name}</p>
-                  <p className="text-xs text-astro-muted">{r.date}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="text-center">
-            <a href="https://t.me/otzivsamadhi" target="_blank" rel="noreferrer" className="btn-secondary">
-              Все отзывы в Telegram ✈
-            </a>
-          </div>
+      <section className="py-20 bg-white">
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <div className="divider-soft mx-auto mb-6" />
+          <h2 className="section-title mb-4">Отзывы клиентов</h2>
+          <p className="font-golos leading-relaxed mb-3 mx-auto" style={{ fontSize: '0.95rem', color: '#5a4a6a', maxWidth: 520 }}>
+            Реальные отзывы собраны в отдельном Telegram-канале. Там вы можете убедиться в подлинности отзывов и познакомиться с опытом других людей.
+          </p>
+          <p className="font-golos mb-10" style={{ fontSize: '0.875rem', color: '#9a8aaa' }}>
+            Ни один отзыв не является вымышленным — только живые впечатления реальных клиентов.
+          </p>
+          <a
+            href="https://t.me/otzivsamadhi"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2.5 font-golos font-medium px-8 py-3 rounded-full transition-all"
+            style={{
+              background: 'linear-gradient(135deg, #8e3b9e 0%, #a971c2 100%)',
+              color: '#fff',
+              fontSize: '0.9rem',
+              boxShadow: '0 4px 16px rgba(142,59,158,0.22)',
+            }}
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M21.8 3.2L2.4 10.7c-1.3.5-1.3 1.3-.2 1.6l4.8 1.5 1.9 5.7c.2.7.5.9 1 .9.4 0 .6-.2.9-.4l2.6-2.5 5.1 3.7c.9.5 1.6.3 1.9-.9l3.3-15.6c.4-1.5-.5-2.1-1.9-1.5z" fill="white"/>
+            </svg>
+            Смотреть отзывы в Telegram
+          </a>
         </div>
       </section>
 
