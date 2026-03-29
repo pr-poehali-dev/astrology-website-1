@@ -5,88 +5,51 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 270 25% 17%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 270 25% 17%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 270 25% 17%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 285 48% 42%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 280 40% 95%;
+    --secondary-foreground: 270 25% 17%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 280 20% 96%;
+    --muted-foreground: 270 15% 50%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 280 40% 95%;
+    --accent-foreground: 270 25% 17%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 280 20% 88%;
+    --input: 280 20% 88%;
+    --ring: 285 48% 42%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-background: 280 30% 98%;
+    --sidebar-foreground: 270 25% 17%;
+    --sidebar-primary: 285 48% 42%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 280 40% 95%;
+    --sidebar-accent-foreground: 270 25% 17%;
+    --sidebar-border: 280 20% 88%;
+    --sidebar-ring: 285 48% 42%;
+
+    /* Brand colors */
+    --color-purple-deep: #8e3b9e;
+    --color-purple-mid: #a971c2;
+    --color-purple-light: #ede3f5;
+    --color-text: #2b2233;
+    --color-bg: #faf8fd;
+    --color-bg-alt: #f3eef9;
   }
 }
 
@@ -95,7 +58,225 @@
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground;
+    font-family: "Golos Text", sans-serif;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: "Cormorant Garamond", serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 18px 32px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #8e3b9e, #a971c2);
+    color: white;
+    font-family: "Golos Text", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 0.01em;
+    box-shadow: 0 4px 20px rgba(142, 59, 158, 0.25);
+    transition: all 0.25s ease;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(142, 59, 158, 0.35);
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 18px 32px;
+    border-radius: 14px;
+    background: transparent;
+    color: #8e3b9e;
+    font-family: "Golos Text", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 0.01em;
+    border: 1.5px solid #a971c2;
+    transition: all 0.25s ease;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .btn-secondary:hover {
+    transform: translateY(-2px);
+    background: var(--color-purple-light);
+    box-shadow: 0 4px 16px rgba(142, 59, 158, 0.12);
+  }
+
+  .card-soft {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 2px 20px rgba(142, 59, 158, 0.07);
+    border: 1px solid rgba(169, 113, 194, 0.12);
+    transition: all 0.3s ease;
+  }
+
+  .card-soft:hover {
+    box-shadow: 0 8px 32px rgba(142, 59, 158, 0.13);
+    transform: translateY(-2px);
+  }
+
+  .section-title {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--color-text);
+    letter-spacing: -0.01em;
+  }
+
+  .section-subtitle {
+    font-family: "Golos Text", sans-serif;
+    font-size: clamp(15px, 2vw, 18px);
+    color: #7a6b84;
+    line-height: 1.65;
+    font-weight: 300;
+  }
+
+  .badge-popular {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #8e3b9e, #a971c2);
+    color: white;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .trust-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: white;
+    border: 1px solid rgba(169, 113, 194, 0.3);
+    border-radius: 40px;
+    font-size: 14px;
+    color: var(--color-text);
+    font-weight: 400;
+  }
+
+  .divider-soft {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, #8e3b9e, #a971c2);
+    border-radius: 2px;
+  }
+
+  .hero-bg {
+    background: linear-gradient(160deg, #faf8fd 0%, #f3eef9 50%, #ede3f5 100%);
+  }
+
+  .section-alt {
+    background: var(--color-bg-alt);
+  }
+
+  .input-elegant {
+    width: 100%;
+    padding: 14px 18px;
+    border-radius: 12px;
+    border: 1.5px solid rgba(169, 113, 194, 0.3);
+    background: white;
+    font-family: "Golos Text", sans-serif;
+    font-size: 15px;
+    color: var(--color-text);
+    outline: none;
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .input-elegant:focus {
+    border-color: #a971c2;
+    box-shadow: 0 0 0 3px rgba(169, 113, 194, 0.12);
+  }
+
+  .input-elegant::placeholder {
+    color: #b8a8c4;
+  }
+
+  .contact-btn-group button {
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1.5px solid rgba(169, 113, 194, 0.4);
+    background: white;
+    font-family: "Golos Text", sans-serif;
+    font-size: 14px;
+    color: #8e3b9e;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .contact-btn-group button.active,
+  .contact-btn-group button:hover {
+    background: var(--color-purple-light);
+    border-color: #8e3b9e;
+    color: #8e3b9e;
+    font-weight: 500;
+  }
+
+  .star-decor {
+    color: #a971c2;
+    opacity: 0.3;
+    font-size: 10px;
+    letter-spacing: 6px;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-up {
+    animation: fadeInUp 0.65s ease both;
+  }
+
+  .animate-fade-up-delay-1 {
+    animation: fadeInUp 0.65s 0.1s ease both;
+  }
+
+  .animate-fade-up-delay-2 {
+    animation: fadeInUp 0.65s 0.2s ease both;
+  }
+
+  .animate-fade-up-delay-3 {
+    animation: fadeInUp 0.65s 0.3s ease both;
+  }
+
+  .animate-fade-up-delay-4 {
+    animation: fadeInUp 0.65s 0.4s ease both;
   }
 }
