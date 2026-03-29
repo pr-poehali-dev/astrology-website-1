@@ -35,25 +35,55 @@ const whatYouGet = [
 
 const tariffs = [
   {
-    name: 'Стандартный',
+    name: 'Стандартный формат',
+    subtitle: 'Письменный разбор',
     price: '4 900 ₽',
-    prepay: 'Предоплата 400 ₽',
+    prepayNote: 'Предоплата 400 рублей. Остаток — после получения разбора.',
     popular: false,
-    features: ['15–18 страниц разбора', 'Видео-пояснение', 'Срок: 2–3 дня', 'Чат 30 дней'],
+    features: [
+      'Разбор личности',
+      'Точки роста',
+      'Обзор основных сфер жизни',
+      'Видео-пояснение',
+      '15–18 страниц',
+      'Подготовка: 2–3 дня',
+      'Поддержка в чате 30 дней',
+    ],
+    caption: 'Подходит, если вы хотите лучше понять себя и получить ясные ориентиры в жизни.',
   },
   {
-    name: 'Расширенный',
+    name: 'Расширенный формат',
+    subtitle: 'Глубокий разбор',
     price: '7 900 ₽',
-    prepay: 'Предоплата 900 ₽',
+    prepayNote: 'Предоплата 900 рублей. Остаток — после получения разбора.',
     popular: true,
-    features: ['Глубокий разбор', '25–30 страниц', 'Видео-пояснение', 'Чат 30 дней', 'Все сферы жизни'],
+    features: [
+      'Всё, что входит в базовый',
+      'Глубокий разбор причин',
+      'Полный разбор всех сфер',
+      'Детальный анализ аспектов',
+      'Повторяющиеся сценарии',
+      '25–30 страниц',
+      'Поддержка в чате 30 дней',
+    ],
+    caption: 'Подходит, если вы хотите увидеть полную картину и глубоко разобраться в причинах происходящего.',
   },
   {
     name: 'Online-встреча',
+    subtitle: '+видеоразбор до встречи',
     price: '10 900 ₽',
-    prepay: 'Предоплата 2 900 ₽',
+    prepayNote: 'Предоплата 2900 рублей. Остаток — после получения разбора.',
     popular: false,
-    features: ['Всё из расширенного', '1–1,5 часа личной встречи', 'Запись встречи', 'Чат 30 дней'],
+    features: [
+      'Всё, что входит в базовый',
+      'Глубокий разбор причин',
+      'Полный разбор всех сфер',
+      'Детальный анализ аспектов',
+      'Повторяющиеся сценарии',
+      '1–1,5 часа личной встречи',
+      'Поддержка в чате 30 дней',
+    ],
+    caption: 'Подходит, если вам важно живое общение и возможность задать вопросы лично.',
   },
 ];
 
@@ -158,41 +188,119 @@ const Natal = () => {
       </section>
 
       {/* TARIFFS */}
-      <section id="tariffs" className="py-16 section-alt">
+      <section id="tariffs" className="py-20 section-alt">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-12">
+          <div className="text-center mb-14">
             <div className="divider-soft mx-auto mb-4" />
             <h2 className="section-title mb-3">Тарифы</h2>
             <p className="section-subtitle max-w-lg mx-auto">Выберите подходящий формат</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10 items-stretch">
             {tariffs.map((t, i) => (
-              <div key={i} className={`card-soft p-8 relative flex flex-col ${t.popular ? 'ring-1 ring-purple-mid/30' : ''}`}>
-                {t.popular && (
-                  <div className="absolute -top-3 left-6">
-                    <span className="badge-popular">Популярный</span>
-                  </div>
-                )}
-                <h3 className="font-cormorant text-2xl font-medium text-astro-text mb-1">{t.name}</h3>
-                <p className="font-cormorant text-3xl font-semibold text-purple-deep mb-1">{t.price}</p>
-                <p className="text-xs text-astro-muted font-golos mb-5">{t.prepay}</p>
-                <ul className="flex flex-col gap-2 flex-1 mb-6">
-                  {t.features.map((f, j) => (
-                    <li key={j} className="flex items-start gap-2 text-sm font-golos text-astro-text">
-                      <span className="text-purple-mid mt-0.5">✓</span>
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-                <a href="#form" className={t.popular ? 'btn-primary text-center' : 'btn-secondary text-center'}>
-                  Заказать
-                </a>
+              <div
+                key={i}
+                className="flex flex-col rounded-2xl overflow-hidden"
+                style={{
+                  background: '#fff',
+                  border: t.popular ? '1.5px solid var(--color-purple-mid)' : '1.5px solid #e8dff4',
+                  boxShadow: '0 2px 12px 0 rgba(142,59,158,0.06)',
+                }}
+              >
+                {/* Шапка */}
+                <div
+                  className="px-7 pt-7 pb-6"
+                  style={{
+                    background: t.popular
+                      ? 'linear-gradient(135deg, #7a2a8e 0%, #a262c2 100%)'
+                      : 'linear-gradient(135deg, #8e3b9e 0%, #b57fd4 100%)',
+                  }}
+                >
+                  {t.popular && (
+                    <p className="font-golos text-xs tracking-widest uppercase mb-3" style={{ color: 'rgba(255,255,255,0.7)', letterSpacing: '0.12em' }}>
+                      Популярный выбор
+                    </p>
+                  )}
+                  <h3 className="font-cormorant font-semibold text-white mb-1" style={{ fontSize: '1.45rem', lineHeight: 1.2 }}>
+                    {t.name}
+                  </h3>
+                  <p className="font-golos text-sm" style={{ color: 'rgba(255,255,255,0.78)' }}>
+                    {t.subtitle}
+                  </p>
+                </div>
+
+                {/* Цена */}
+                <div className="px-7 pt-6 pb-4" style={{ borderBottom: '1px solid #f0eaf8' }}>
+                  <p className="font-cormorant font-bold" style={{ fontSize: '2.2rem', color: 'var(--color-purple-deep)', lineHeight: 1 }}>
+                    {t.price}
+                  </p>
+                  <p className="font-golos text-xs mt-2 leading-relaxed" style={{ color: 'var(--color-purple-mid)' }}>
+                    {t.prepayNote}
+                  </p>
+                </div>
+
+                {/* Список */}
+                <div className="flex-1 px-7 pt-4 pb-6">
+                  <ul className="divide-y" style={{ borderColor: '#f0eaf8' }}>
+                    {t.features.map((f, j) => (
+                      <li key={j} className="flex items-center gap-3 py-2.5">
+                        <span
+                          className="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center"
+                          style={{ background: 'var(--color-purple-light)', color: 'var(--color-purple-deep)' }}
+                        >
+                          <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
+                            <path d="M1 4L3.8 7L9 1" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </span>
+                        <span className="font-golos text-sm" style={{ color: 'var(--color-text)' }}>{f}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Кнопка + подпись */}
+                <div className="px-7 pb-8 pt-2 flex flex-col items-center gap-3">
+                  <a
+                    href="#form"
+                    className="font-golos font-medium px-8 py-2.5 rounded-full text-sm transition-all"
+                    style={{
+                      background: t.popular ? 'var(--color-purple-deep)' : 'transparent',
+                      color: t.popular ? '#fff' : 'var(--color-purple-deep)',
+                      border: t.popular ? '1.5px solid var(--color-purple-deep)' : '1.5px solid var(--color-purple-mid)',
+                    }}
+                    onMouseEnter={(e) => {
+                      const el = e.currentTarget as HTMLAnchorElement;
+                      el.style.background = 'var(--color-purple-deep)';
+                      el.style.color = '#fff';
+                    }}
+                    onMouseLeave={(e) => {
+                      const el = e.currentTarget as HTMLAnchorElement;
+                      if (t.popular) {
+                        el.style.background = 'var(--color-purple-deep)';
+                        el.style.color = '#fff';
+                      } else {
+                        el.style.background = 'transparent';
+                        el.style.color = 'var(--color-purple-deep)';
+                      }
+                    }}
+                  >
+                    Заказать
+                  </a>
+                  <p className="font-golos text-xs text-center leading-relaxed" style={{ color: '#a88bbf', maxWidth: '220px' }}>
+                    {t.caption}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
-          <div className="bg-purple-light/60 border border-purple-mid/20 rounded-2xl p-5 text-center max-w-2xl mx-auto">
-            <p className="font-cormorant text-lg text-astro-text">
-              ✦ Основная сумма оплачивается <strong>после получения готового разбора</strong>
+
+          {/* Нижняя плашка */}
+          <div
+            className="flex items-center justify-center gap-3 max-w-2xl mx-auto px-6 py-4 rounded-2xl"
+            style={{ background: 'var(--color-purple-light)', border: '1px solid #ddd0ef' }}
+          >
+            <span style={{ color: 'var(--color-purple-mid)', fontSize: '1rem' }}>✦</span>
+            <p className="font-cormorant text-base text-center" style={{ color: 'var(--color-text)' }}>
+              Основная сумма оплачивается <strong>после получения готового разбора</strong>
             </p>
           </div>
         </div>
