@@ -151,7 +151,7 @@ const Home = () => {
           <div className="text-center mb-8">
             <div className="divider-soft mx-auto mb-4" />
             <h2 className="section-title mb-2">Оставить заявку</h2>
-            <p className="section-subtitle">Отвечу в течение нескольких часов</p>
+            <p className="section-subtitle">Напишите ваш вопрос — отвечу в течение 15 минут</p>
           </div>
           <ContactForm bgLight />
         </div>
