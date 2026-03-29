@@ -94,10 +94,26 @@ const reviews = [
 ];
 
 const advantages = [
-  { icon: '◈', title: 'Работа под ваш запрос', desc: 'Разбор строится вокруг того, что важно именно для вас — не по шаблону' },
-  { icon: '✓', title: 'Возможность корректировки', desc: 'После получения разбора вы можете задать уточняющие вопросы' },
-  { icon: '◎', title: 'Без жаргона', desc: 'Всё на понятном языке — вам не нужно знать астрологию' },
-  { icon: '◐', title: 'Конфиденциально', desc: 'Ваши данные и вопросы остаются только между нами' },
+  {
+    svgPath: 'M12 3c0 0-4 4-4 9s4 9 4 9m0-18c0 0 4 4 4 9s-4 9-4 9M3 12h18M4.2 7h15.6M4.2 17h15.6',
+    title: 'Работа под ваш запрос',
+    desc: 'Разбор строится вокруг того, что важно именно для вас, а не по шаблону.',
+  },
+  {
+    svgPath: 'M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z',
+    title: 'Возможность корректировки',
+    desc: 'После получения разбора вы можете задать уточняющие вопросы.',
+  },
+  {
+    svgPath: 'M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6z',
+    title: 'Понятно и доступно',
+    desc: 'Всё объясняется простым языком, без сложных терминов.',
+  },
+  {
+    svgPath: 'M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z',
+    title: 'Конфиденциально',
+    desc: 'Ваши данные и личные вопросы остаются только между нами.',
+  },
 ];
 
 const Natal = () => {
@@ -334,20 +350,62 @@ const Natal = () => {
       </section>
 
       {/* ADVANTAGES */}
-      <section className="py-16 section-alt">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-12">
+      <section className="py-20 section-alt">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="text-center mb-14">
             <div className="divider-soft mx-auto mb-4" />
             <h2 className="section-title mb-3">Почему это удобно и понятно</h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {advantages.map((item, i) => (
-              <div key={i} className="text-center p-6">
-                <div className="w-12 h-12 rounded-2xl bg-purple-light flex items-center justify-center mx-auto mb-4">
-                  <span className="text-purple-deep text-lg">{item.icon}</span>
+              <div
+                key={i}
+                className="flex items-start gap-5 rounded-2xl p-7"
+                style={{
+                  background: '#fff',
+                  border: '1.5px solid #ede3f5',
+                  boxShadow: '0 2px 14px 0 rgba(142,59,158,0.05)',
+                }}
+              >
+                {/* Иконка */}
+                <div
+                  className="flex-shrink-0 flex items-center justify-center rounded-xl"
+                  style={{
+                    width: 52,
+                    height: 52,
+                    background: 'linear-gradient(135deg, #f3eaf9 0%, #ede3f5 100%)',
+                    border: '1px solid #ddd0ef',
+                  }}
+                >
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="var(--color-purple-deep)"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d={item.svgPath} />
+                  </svg>
                 </div>
-                <h3 className="font-cormorant text-xl font-medium text-astro-text mb-2">{item.title}</h3>
-                <p className="text-sm text-astro-muted font-golos leading-relaxed">{item.desc}</p>
+
+                {/* Текст */}
+                <div>
+                  <h3
+                    className="font-cormorant font-semibold mb-1.5"
+                    style={{ fontSize: '1.2rem', lineHeight: 1.25, color: 'var(--color-text)' }}
+                  >
+                    {item.title}
+                  </h3>
+                  <p
+                    className="font-golos leading-relaxed"
+                    style={{ fontSize: '0.875rem', color: '#7a6a8a', maxWidth: 280 }}
+                  >
+                    {item.desc}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
