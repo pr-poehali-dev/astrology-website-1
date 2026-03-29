@@ -3,7 +3,8 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ContactForm from '@/components/ContactForm';
 
-const ASTROLOGER_PHOTO = 'https://cdn.poehali.dev/projects/d891ad6e-28b9-4ac2-91d3-915cf9ec7d67/files/eaa16d23-ab1c-46c5-a146-2a282d4abd27.jpg';
+const ASTROLOGER_PHOTO = 'https://cdn.poehali.dev/files/91cae771-7a1a-4a08-bbd0-f331bfb3e789.jpg';
+const DIPLOMA_PHOTO = 'https://cdn.poehali.dev/files/00eb1383-705d-4dca-8739-62c7ef5c0f8d.jpg';
 
 const trustItems = [
   { icon: '✦', text: 'Первый вопрос бесплатно' },
@@ -251,8 +252,12 @@ const Natal = () => {
           <div className="divider-soft mx-auto mb-6" />
           <h2 className="section-title mb-4">Сертификаты и образование</h2>
           <p className="section-subtitle mb-8">Профессиональная подготовка и подтверждённая квалификация</p>
-          <div className="w-full h-48 rounded-2xl border-2 border-dashed border-purple-light flex items-center justify-center">
-            <p className="text-astro-muted font-golos text-sm">[ Здесь будет фото сертификата ]</p>
+          <div className="rounded-2xl overflow-hidden shadow-md border border-purple-light/40 inline-block">
+            <img
+              src={DIPLOMA_PHOTO}
+              alt="Диплом астрологической академии — Самади Елена"
+              className="w-full max-w-lg mx-auto block"
+            />
           </div>
         </div>
       </section>

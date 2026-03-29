@@ -4,7 +4,7 @@ import Footer from '@/components/Footer';
 import ContactForm from '@/components/ContactForm';
 import Icon from '@/components/ui/icon';
 
-const ASTROLOGER_PHOTO = 'https://cdn.poehali.dev/projects/d891ad6e-28b9-4ac2-91d3-915cf9ec7d67/files/eaa16d23-ab1c-46c5-a146-2a282d4abd27.jpg';
+const ASTROLOGER_PHOTO = 'https://cdn.poehali.dev/files/91cae771-7a1a-4a08-bbd0-f331bfb3e789.jpg';
 
 const trustItems = [
   { icon: '✦', text: 'Первый вопрос бесплатно' },
