@@ -412,6 +412,128 @@ const Natal = () => {
         </div>
       </section>
 
+      {/* TELEGRAM CHANNEL */}
+      <section className="py-20 bg-white">
+        <div className="max-w-5xl mx-auto px-6">
+          <div
+            className="rounded-3xl overflow-hidden"
+            style={{
+              background: 'linear-gradient(135deg, #f7f2fd 0%, #ede3f5 100%)',
+              border: '1.5px solid #ddd0ef',
+            }}
+          >
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
+              {/* Левая колонка — текст */}
+              <div className="p-10 md:p-12 flex flex-col justify-center">
+                {/* Плашка канала */}
+                <div className="flex items-center gap-3 mb-7">
+                  <div
+                    className="flex items-center justify-center rounded-xl flex-shrink-0"
+                    style={{
+                      width: 44,
+                      height: 44,
+                      background: 'linear-gradient(135deg, #8e3b9e 0%, #b57fd4 100%)',
+                    }}
+                  >
+                    {/* Telegram icon */}
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                      <path d="M21.8 3.2L2.4 10.7c-1.3.5-1.3 1.3-.2 1.6l4.8 1.5 1.9 5.7c.2.7.5.9 1 .9.4 0 .6-.2.9-.4l2.6-2.5 5.1 3.7c.9.5 1.6.3 1.9-.9l3.3-15.6c.4-1.5-.5-2.1-1.9-1.5z" fill="white" opacity=".9"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-golos font-medium text-sm" style={{ color: 'var(--color-text)' }}>
+                      Telegram-канал
+                    </p>
+                    <p className="font-golos text-xs" style={{ color: 'var(--color-purple-mid)' }}>
+                      @samadhielena
+                    </p>
+                  </div>
+                </div>
+
+                <h2
+                  className="font-cormorant font-semibold mb-4"
+                  style={{ fontSize: 'clamp(1.6rem, 3vw, 2.1rem)', lineHeight: 1.2, color: 'var(--color-text)' }}
+                >
+                  Загляните в мой Telegram-канал
+                </h2>
+
+                <p className="font-golos leading-relaxed mb-4" style={{ fontSize: '0.925rem', color: '#5a4a6a' }}>
+                  В Telegram я публикую полезные материалы, наблюдения, разборы и практические заметки по астрологии. Это хороший способ познакомиться с моим подходом, посмотреть стиль работы и понять, насколько вам подходит такой формат.
+                </p>
+
+                <p className="font-golos leading-relaxed mb-8" style={{ fontSize: '0.875rem', color: '#8a7a9a' }}>
+                  Вы можете перейти, посмотреть публикации и убедиться, что перед вами реальный практикующий специалист.
+                </p>
+
+                <div className="flex flex-col items-start gap-3">
+                  <a
+                    href="https://t.me/samadhielena"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2.5 font-golos font-medium px-7 py-3 rounded-full transition-all"
+                    style={{
+                      background: 'linear-gradient(135deg, #8e3b9e 0%, #a971c2 100%)',
+                      color: '#fff',
+                      fontSize: '0.9rem',
+                      boxShadow: '0 4px 16px rgba(142,59,158,0.25)',
+                    }}
+                  >
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                      <path d="M21.8 3.2L2.4 10.7c-1.3.5-1.3 1.3-.2 1.6l4.8 1.5 1.9 5.7c.2.7.5.9 1 .9.4 0 .6-.2.9-.4l2.6-2.5 5.1 3.7c.9.5 1.6.3 1.9-.9l3.3-15.6c.4-1.5-.5-2.1-1.9-1.5z" fill="white"/>
+                    </svg>
+                    Перейти в Telegram-канал
+                  </a>
+                  <p className="font-golos text-xs" style={{ color: '#9a8aaa' }}>
+                    Подписывайтесь, если хотите получать полезные материалы по астрологии
+                  </p>
+                </div>
+              </div>
+
+              {/* Правая колонка — декоративная */}
+              <div
+                className="hidden md:flex flex-col items-center justify-center p-12 relative overflow-hidden"
+                style={{ background: 'linear-gradient(135deg, #8e3b9e 0%, #a971c2 60%, #c490d8 100%)' }}
+              >
+                {/* Декоративные круги */}
+                <div className="absolute top-0 right-0 w-40 h-40 rounded-full opacity-10" style={{ background: '#fff', transform: 'translate(30%, -30%)' }} />
+                <div className="absolute bottom-0 left-0 w-32 h-32 rounded-full opacity-10" style={{ background: '#fff', transform: 'translate(-30%, 30%)' }} />
+
+                {/* Центральный символ */}
+                <div
+                  className="relative z-10 flex flex-col items-center gap-6"
+                >
+                  <div
+                    className="flex items-center justify-center rounded-2xl"
+                    style={{
+                      width: 80,
+                      height: 80,
+                      background: 'rgba(255,255,255,0.15)',
+                      border: '1.5px solid rgba(255,255,255,0.3)',
+                    }}
+                  >
+                    <svg width="38" height="38" viewBox="0 0 24 24" fill="none">
+                      <path d="M21.8 3.2L2.4 10.7c-1.3.5-1.3 1.3-.2 1.6l4.8 1.5 1.9 5.7c.2.7.5.9 1 .9.4 0 .6-.2.9-.4l2.6-2.5 5.1 3.7c.9.5 1.6.3 1.9-.9l3.3-15.6c.4-1.5-.5-2.1-1.9-1.5z" fill="white"/>
+                    </svg>
+                  </div>
+                  <div className="text-center">
+                    <p className="font-cormorant text-white font-semibold mb-1" style={{ fontSize: '1.3rem' }}>
+                      @samadhielena
+                    </p>
+                    <p className="font-golos text-xs" style={{ color: 'rgba(255,255,255,0.7)' }}>
+                      астрология · практика · разборы
+                    </p>
+                  </div>
+                  {/* Декоративные звёздочки */}
+                  <div className="flex gap-3" style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.8rem', letterSpacing: '0.2em' }}>
+                    ✦ ✦ ✦
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CERTIFICATE PLACEHOLDER */}
       <section className="py-16 bg-white">
         <div className="max-w-2xl mx-auto px-6 text-center">
