@@ -75,39 +75,72 @@ const Home = () => {
       {/* HERO */}
       <section className="hero-bg relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-20 right-10 w-64 h-64 rounded-full bg-purple-light/40 blur-3xl" />
-          <div className="absolute bottom-10 left-10 w-48 h-48 rounded-full bg-purple-light/30 blur-2xl" />
+          <div className="absolute top-20 right-10 w-80 h-80 rounded-full blur-3xl" style={{ background: 'rgba(169,113,194,0.18)' }} />
+          <div className="absolute bottom-10 left-10 w-56 h-56 rounded-full blur-2xl" style={{ background: 'rgba(169,113,194,0.12)' }} />
+          <div className="absolute top-1/2 right-0 w-[520px] h-[520px] rounded-full blur-3xl" style={{ background: 'rgba(142,59,158,0.10)', transform: 'translate(15%, -50%)' }} />
         </div>
 
-        <div className="max-w-6xl mx-auto px-6 py-20 md:py-28">
-          <div className="max-w-2xl animate-fade-up">
-            <p className="star-decor mb-6 font-golos">✦ ✦ ✦</p>
-            <h1 className="section-title mb-5" style={{ fontSize: 'clamp(38px, 6vw, 64px)', lineHeight: 1.1 }}>
-              Консультации<br />
-              <em className="not-italic" style={{ color: 'var(--color-purple-deep)' }}>профессионального</em><br />
-              астролога
-            </h1>
-            <p className="section-subtitle mb-8 max-w-xl">
-              Натальная карта, прогнозы и ответы на личные вопросы — без сложных терминов, с практическими выводами и рекомендациями
-            </p>
+        <div className="max-w-6xl mx-auto px-6 py-20 md:py-24">
+          <div className="flex flex-col md:flex-row items-center gap-10 md:gap-6">
 
-            <div className="flex flex-wrap gap-2 mb-8">
-              {trustItems.map((item, i) => (
-                <div key={i} className="trust-pill">
-                  <span className="text-purple-mid text-xs">{item.icon}</span>
-                  <span className="text-sm">{item.text}</span>
-                </div>
-              ))}
+            {/* Левая колонка — текст */}
+            <div className="flex-1 animate-fade-up md:pr-6">
+              <p className="star-decor mb-6 font-golos">✦ ✦ ✦</p>
+              <h1 className="section-title mb-5" style={{ fontSize: 'clamp(36px, 5.5vw, 62px)', lineHeight: 1.1 }}>
+                Консультации<br />
+                <em className="not-italic" style={{ color: 'var(--color-purple-deep)' }}>профессионального</em><br />
+                астролога
+              </h1>
+              <p className="section-subtitle mb-8 max-w-lg">
+                Натальная карта, прогнозы и ответы на личные вопросы — без сложных терминов, с практическими выводами и рекомендациями
+              </p>
+
+              <div className="flex flex-wrap gap-2 mb-8">
+                {trustItems.map((item, i) => (
+                  <div key={i} className="trust-pill">
+                    <span className="text-purple-mid text-xs">{item.icon}</span>
+                    <span className="text-sm">{item.text}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="flex flex-wrap gap-3">
+                <a href="#form" className="btn-primary">
+                  Задать первый вопрос бесплатно
+                </a>
+                <a href="#services" className="btn-secondary">
+                  Заказать консультацию
+                </a>
+              </div>
             </div>
 
-            <div className="flex flex-wrap gap-3">
-              <a href="#form" className="btn-primary">
-                Задать первый вопрос бесплатно
-              </a>
-              <a href="#services" className="btn-secondary">
-                Заказать консультацию
-              </a>
+            {/* Правая колонка — иллюстрация */}
+            <div className="flex-shrink-0 flex items-center justify-center relative md:w-[420px] w-[280px]">
+              <div
+                className="absolute inset-0 rounded-full"
+                style={{
+                  background: 'radial-gradient(circle, rgba(142,59,158,0.13) 0%, rgba(169,113,194,0.07) 55%, transparent 75%)',
+                  transform: 'scale(1.25)',
+                }}
+              />
+              <div
+                className="absolute inset-0 rounded-full"
+                style={{
+                  background: 'radial-gradient(circle, rgba(237,227,245,0.6) 0%, rgba(237,227,245,0.1) 65%, transparent 80%)',
+                }}
+              />
+              <img
+                src="https://cdn.poehali.dev/files/75db2525-c328-4e00-acca-cab99422c262.png"
+                alt="Астрологический зодиакальный круг"
+                className="relative z-10 w-full h-auto select-none"
+                style={{
+                  filter: 'drop-shadow(0 8px 40px rgba(142,59,158,0.22)) drop-shadow(0 2px 12px rgba(142,59,158,0.12))',
+                  mixBlendMode: 'multiply',
+                }}
+                draggable={false}
+              />
             </div>
+
           </div>
         </div>
       </section>
